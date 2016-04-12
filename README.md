@@ -9,7 +9,8 @@ Tests in each class file can be run as individual tests.
 Out of scope: As sending email is disabled, Text only email is saved.
 Expect short delay set before setting the login and password
 Each class file will open new broswer and run the test in that class file and close the browser.
-I was unable to add the this jar file, remote: warning: File JRE System Library[JavaSE-1.8]/rt.jar is 60.36 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB. You may need to add this external jar file rt.jar
+I was unable to add the this jar file, remote: warning: File JRE System Library[JavaSE-1.8]/rt.jar is 60.36 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB. You may need to add this external jar file rt.jar.
+Test scripts are written for chrome driver.
 
 
 
