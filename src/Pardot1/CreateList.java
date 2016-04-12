@@ -7,18 +7,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import java.util.List;
 
 import Pardot.Pardot_ToolBox.GeneralMethods;
 import Pardot.Pardot_ToolBox.PardotTestCase;
-//import Pardot.Pardot_ToolBox.Pardot_Pages.ErrorPage;
 import Pardot.Pardot_ToolBox.Pardot_Pages.GenerateData;
 import Pardot.Pardot_ToolBox.Pardot_Pages.ListModulePage;
 
 import Pardot.Pardot_ToolBox.Pardot_Pages.LoginPage;
-//import Pardot.Pardot_ToolBox.Pardot_Pages.MainPage;
 import Pardot.Pardot_ToolBox.Pardot_Pages.ProspectsListAdd;
 import Pardot.Pardot_ToolBox.Pardot_Pages.ProspectsPage;
 
@@ -42,12 +41,9 @@ public class CreateList extends PardotTestCase {
 		genData=new GenerateData();	 
 		
 		
-		 ListModulePage lmp = new ListModulePage(driver, "listmodulepage");	
 		//Page Objects used
-	// MainPage mp = new MainPage(driver, "mainpage");
+     ListModulePage lmp = new ListModulePage(driver, "listmodulepage");	 
 	 LoginPage lp = new LoginPage(driver, "loginpage");
-	// ErrorPage ep = new ErrorPage(driver, "errorpage");
-	// ListModulePage lmp = new ListModulePage(driver, "listmodulepage");	
 	 ProspectsPage pp = new ProspectsPage(driver, "prospectspage");
 	 ProspectsListAdd pla = new ProspectsListAdd(driver, "prospectslist");
 
@@ -91,8 +87,8 @@ public class CreateList extends PardotTestCase {
     	return;
 }
 				        
-				      
-				        } 
+	}			      
+				        
 			    	
 @Test(dependsOnMethods={"ListOriginal"})
 public static void DupeList() throws IOException, InterruptedException {
@@ -102,15 +98,15 @@ public static void DupeList() throws IOException, InterruptedException {
 	 lmp.Marketing.click();
 	 lmp.Segmentation.click();
  
-	    	driver.findElement(By.id("listxistx_link_create")).click();
+	    driver.findElement(By.id("listxistx_link_create")).click();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.findElement(By.name("name")).sendKeys(listName);
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-				driver.findElement(By.id("save_information")).click(); 
-				driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
-				String ListCreated = listName;
-			 WebElement alert = driver.findElement(By.xpath("//div[@class='alert alert-error']"));
-				Assert.assertEquals(alert.getText().toLowerCase().trim(),"please correct the errors below and re-submit");
+		driver.findElement(By.id("save_information")).click(); 
+		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		String ListCreated = listName;
+		WebElement alert = driver.findElement(By.xpath("//div[@class='alert alert-error']"));
+		Assert.assertEquals(alert.getText().toLowerCase().trim(),"please correct the errors below and re-submit");
 							
 				if(ListCreated.equals(listName))
 				{
@@ -129,10 +125,10 @@ public static void DupeList() throws IOException, InterruptedException {
 
 public void RenameList() throws IOException, InterruptedException{
     try{
-    	ListModulePage lmp = new ListModulePage(driver, "listmodulepage");
+     ListModulePage lmp = new ListModulePage(driver, "listmodulepage");
     	
 	 lmp.Marketing.click();
-	 lmp.Segmentation.click();
+	 lmp.Segmentation.click(); 
     	
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		driver.findElement(By.cssSelector("i.icon-cog.muted")).click();
@@ -202,6 +198,14 @@ public static boolean SelectFromList(WebDriver driver, WebElement Prospects, Str
 		return false;
 	}
 }
+
+
+//Logout
+
+@AfterClass(alwaysRun = true)
+public void tearDown() throws Exception {
+  driver.quit();
+ }
 
 		 		      
 		 	   }

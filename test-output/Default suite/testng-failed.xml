@@ -1,9 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test">
+  <test verbose="2" name="Default test">
     <classes>
-      <class name="Pardot1.SendEmail1"/>
+      <class name="Pardot1.CreateProspect"/>
+      <class name="Pardot1.SendEmail"/>
+      <class name="Pardot1.CreateList"/>
     </classes>
   </test> <!-- Default test -->
+  <test name="Default test(failed)">
+    <classes>
+      <class name="Pardot1.SendEmail">
+        <methods>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Pardot1.SendEmail -->
+      <class name="Pardot1.CreateProspect">
+        <methods>
+          <include name="tearDown"/>
+          <include name="CreateProspect1"/>
+          <include name="CreateProspectList"/>
+        </methods>
+      </class> <!-- Pardot1.CreateProspect -->
+      <class name="Pardot1.CreateList">
+        <methods>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Pardot1.CreateList -->
+    </classes>
+  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

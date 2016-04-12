@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import Pardot.Pardot_ToolBox.GeneralMethods;
 import Pardot.Pardot_ToolBox.PardotTestCase;
 import Pardot.Pardot_ToolBox.Pardot_Pages.LoginPage;
-import Pardot.Pardot_ToolBox.Pardot_Pages.MainPage;
+
 
 
 public class Issue_LoginLockout extends PardotTestCase {
@@ -18,7 +18,7 @@ public class Issue_LoginLockout extends PardotTestCase {
 	private ChromeOptions options;
 	private StringBuffer verificationErrors = new StringBuffer();
 	public BufferedWriter artifact;
-	public MainPage mp;
+	
 	public LoginPage lp;
 	//public SmartFilesPage sfp;
 	
@@ -48,12 +48,7 @@ public class Issue_LoginLockout extends PardotTestCase {
 		String iterationStamp = "";
 		String preReq = null;
 		String reqFields = "";
-			
 		
-	    
-	    
-		// Test data
-		String organization = "Shared Cloud;GenHealth Enterprises, Inc. (GHEnt)"; 
 			
 	    // Run in local stress loop to make sure the test is robust
 	 	for (int i = 1; i <= localStressLoop; i++){ // localStressLoop is controlled via the config.properties file	     
@@ -65,7 +60,7 @@ public class Issue_LoginLockout extends PardotTestCase {
 			driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 		    driver.manage().window().maximize();
 			// Pages browsed 
-		    mp  = new MainPage(driver, "mainPage.txt");
+		   // mp  = new MainPage(driver, "mainPage.txt");
 		    lp = new LoginPage(driver, "login.txt");
 		   // sfp = new SmartFilesPage(driver, "smartfilespage.txt");
 		    
@@ -73,7 +68,7 @@ public class Issue_LoginLockout extends PardotTestCase {
 		    lp.launchApplication("Pardot"); // Changed on 3/21/2016
 	        lp.login();
 	        GeneralMethods.delay(5000);
-	        currStepResult = lp.verifyLogin() && mp.checkLoginSucceeded().equals("00") ? "Pass" : "Fail";
+	       // currStepResult = lp.verifyLogin() && mp.checkLoginSucceeded().equals("00") ? "Pass" : "Fail";
 			//Artifact.VerifyWriteToArtifactS(artifact, iterationStamp+"Verify successful user login to "+GeneralMethods.getDeployment()+" build version "+mp.getBuildNumber(), currStepResult); // MGB 5/5/2014
 			
 			if (currStepResult.equals("Fail")) break;

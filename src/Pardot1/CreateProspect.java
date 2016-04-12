@@ -3,22 +3,22 @@ package Pardot1;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import java.io.IOException;
 import Pardot.Pardot_ToolBox.Pardot_Pages.ProspectsPage;
 
 import Pardot.Pardot_ToolBox.GeneralMethods;
 import Pardot.Pardot_ToolBox.PardotTestCase;
-//import Pardot.Pardot_ToolBox.Pardot_Pages.ErrorPage;
 import Pardot.Pardot_ToolBox.Pardot_Pages.GenerateData;
 import Pardot.Pardot_ToolBox.Pardot_Pages.ListModulePage;
 import Pardot.Pardot_ToolBox.Pardot_Pages.LoginPage;
-//import Pardot.Pardot_ToolBox.Pardot_Pages.MainPage;
 import Pardot.Pardot_ToolBox.Pardot_Pages.ProspectsListAdd;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+
 public class CreateProspect extends PardotTestCase {
 	public static GenerateData genData;
 	public static String _previprospectFName;	
@@ -29,9 +29,6 @@ public class CreateProspect extends PardotTestCase {
 	public static String _previousListName;
 	public static String _listName;
 	
-	
-	
-	//@Test
 	@Test(priority=1)
 	
 	public static void CreateProspect1() throws Exception {
@@ -43,11 +40,9 @@ public class CreateProspect extends PardotTestCase {
 		//BufferedWriter artifact = Artifact.OpenArtifact(GeneralMethods.getArtifactName(), testName+"  ",timeStamp);
 		
 		// Objects used
-		//MainPage mp = new MainPage(driver, "mainpage");
+		
 		LoginPage lp = new LoginPage(driver, "loginpage");
-		//ErrorPage ep = new ErrorPage(driver, "errorpage");
 		ListModulePage lmp = new ListModulePage(driver, "listmodulepage");
-		//ProspectsPage_works pp = new ProspectsPage_works(driver, "prospectspage_works");
 		ProspectsPage pp = new ProspectsPage(driver, "prospectspage");
 		ProspectsListAdd pl = new ProspectsListAdd(driver, "prospectslist");
 		genData=new GenerateData();
@@ -72,61 +67,59 @@ public class CreateProspect extends PardotTestCase {
 			 	 					.ignoring(NoSuchElementException.class);
 			 	    	
 			 	     
-			 	     ProspectsPage.hoverElement(driver, driver.findElement(By.linkText("Prospects")));
-				 	        	// fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.linkText("Prospect List")));
-				 	 driver.findElement(By.linkText("Prospect List")).click();
-				 	// driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			 	    ProspectsPage.hoverElement(driver, driver.findElement(By.linkText("Prospects")));				 	        	
+				 	driver.findElement(By.linkText("Prospect List")).click();
+				 	
 				 	fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("pr_link_create")));		 
-			 		 ProspectsPage.hoverElement(driver, driver.findElement(By.id("pr_link_create")));
-		 			 driver.findElement(By.id("pr_link_create")).click();
-		 			// driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);
-		 			//driver.findElement(By.id("default_field_3361")).sendKeys("Firstname");
-		 		//	pp.FName.isDisplayed();
-		 			// pp.FName.clear();
+			 		ProspectsPage.hoverElement(driver, driver.findElement(By.id("pr_link_create")));
+		 			driver.findElement(By.id("pr_link_create")).click();
+		 			
 		 			fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("default_field_3361")));
-		 		//	driver.findElement(By.id("default_field_3361")).sendKeys("Firstname1");
 		 			pp.FName.clear();
 		 			pp.FName.sendKeys("FirstName"+genData.generateRandomNumber(9));
-		 			fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("default_field_3371")));
-		 			//driver.findElement(By.id("default_field_3371")).sendKeys("Lastname1");
-		 			//driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		 			
-		 		//	pp.LName.isDisplayed();
+		 			fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("default_field_3371")));
 		 			pp.LName.clear();
 		 			pp.LName.sendKeys("LastName"+genData.generateRandomNumber(9));	 				 
-		 		//	driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				// fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")));
-		 				//driver.findElement(By.id("email")).clear();
+		 		
 		 			fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("email")));
-		 				driver.findElement(By.id("email")).sendKeys("Test"+genData.generateRandomNumber(9)+"@Test.com");
-		 				//fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("default_field_3401")));
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.id("default_field_3401")).sendKeys("Pardot");
-		 				//fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.id("default_field_3411")));
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.id("default_field_3411")).sendKeys("https://pi.pardot.com/");
-		 				//fluentWait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("campaignSelectorCSS")));
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.cssSelector(pp.campaignSelectorCSS)).click();
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.cssSelector(pp.optionSelectorCSS)).click();
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.cssSelector(pp.profileSelectorCSS)).click();
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.cssSelector(pp.optionSelectorCSS1)).click();
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.cssSelector(pp.assignToSelectorCSS)).click();
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.cssSelector(pp.optionSelectorCSS2)).click();
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.cssSelector(pp.user_SelectorCSS)).click();
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.cssSelector(pp.optionSelectorCSS3)).click();
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-		 				driver.findElement(By.id("score")).sendKeys(genData.generateRandomNumber(9));
-		 				driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.id("email")).sendKeys("Test"+genData.generateRandomNumber(9)+"@Test.com");
 		 				
-		 				 driver.findElement(By.name("commit")).click();
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.id("default_field_3401")).sendKeys("Pardot");
+		 				
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.id("default_field_3411")).sendKeys("https://pi.pardot.com/");
+		 				
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.cssSelector(pp.campaignSelectorCSS)).click();
+		 			
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.cssSelector(pp.optionSelectorCSS)).click();
+		 			
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.cssSelector(pp.profileSelectorCSS)).click();
+		 			
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.cssSelector(pp.optionSelectorCSS1)).click();
+		 				
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.cssSelector(pp.assignToSelectorCSS)).click();
+		 			
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.cssSelector(pp.optionSelectorCSS2)).click();
+		 			
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.cssSelector(pp.user_SelectorCSS)).click();
+		 			
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.cssSelector(pp.optionSelectorCSS3)).click();
+		 			
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		 			driver.findElement(By.id("score")).sendKeys(genData.generateRandomNumber(9));
+		 			
+		 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);		 				
+		 			driver.findElement(By.name("commit")).click();
 		 				 		 				
 		 				 System.out.println("Wait 3s after login");
 		 		          GeneralMethods.delay(3000);
@@ -147,20 +140,19 @@ public class CreateProspect extends PardotTestCase {
 	    try {
 	    	
 	    	driver.findElement(By.linkText("Edit")).click();
-	    	//driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 	    	driver.findElement(By.linkText("LISTS")).click();
 	    	
-	    	 driver.findElement(By.cssSelector("b")).click();
-		    	driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);//changed from 20 to 60
-		    	driver.findElement(By.cssSelector("b")).isDisplayed(); // added new on 3/27/2016
-			    driver.findElement(By.cssSelector("div.chzn-search > input[type=\"text\"]")).clear();
+	    	driver.findElement(By.cssSelector("b")).click();
+		    driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		    driver.findElement(By.cssSelector("b")).isDisplayed();
+			driver.findElement(By.cssSelector("div.chzn-search > input[type=\"text\"]")).clear();
 			    
-			   driver.findElement(By.cssSelector("div.chzn-search > input[type=\"text\"]")).sendKeys(CreateList.listName);
-			   driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);//changed from 20 to 60
+			driver.findElement(By.cssSelector("div.chzn-search > input[type=\"text\"]")).sendKeys(CreateList.listName);
+			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 			   
-			   driver.findElement(By.className("active-result")).click();
-			   driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-			    driver.findElement(By.name("commit")).click();   	 
+			driver.findElement(By.className("active-result")).click();
+			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.findElement(By.name("commit")).click();   	 
 	    	
 	      return;
 	    } catch (NoAlertPresentException e) {
@@ -177,13 +169,7 @@ public class CreateProspect extends PardotTestCase {
 		 lmp.Segmentation.click();
 	    	    	
 		    driver.findElement(By.cssSelector("#listx_row_a0 > td:nth-child(2) > a")).click();
-		  //  driver.findElement(By.id("listx_table_filer")).clear();
-		 //   driver.findElement(By.id("listx_table_filer")).sendKeys(CreateList.listName);
-			//driver.findElement(By.id("name")).click();
-		//	driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		//	driver.findElement(By.name("name")).clear();
-									 
-			//lmp.Name.sendKeys(listName);
+		 
 			 System.out.println("Wait 3s after login");
 	          GeneralMethods.delay(3000);
 	          // Calculate the test step elapsed time
@@ -196,6 +182,12 @@ public class CreateProspect extends PardotTestCase {
 	      
    }
 	
+	//Logout
+	
+	@AfterClass(alwaysRun = true)
+	public void tearDown() throws Exception {
+	  driver.quit();
+	 }
 	
 
 }

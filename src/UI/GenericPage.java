@@ -28,10 +28,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-/*
- * This java code was adapted from article at http://blog.cloudtroopers.com/content/using-genericpage-your-java-selenium-webdriver-framework 
- */
-	
 /**
  * Generic Page is extended by every page in this framework, meaning that all pages can use its methods.
  * General user actions
@@ -685,68 +681,7 @@ public class GenericPage {
         	}
         }
         
-       /* public WebElement findVisibleButton(WebElement obj, String cssData, String buttonDescription) throws Exception{
-        	try{
-        		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
-        		WebElement button = null;
-        		
-        		List<WebElement> list = GeneralMethods.FindElementsInObjHierarchy(obj, this.listButtonsLightGrayButtonGroupCss);
-        		if (list != null){
-        			for (WebElement element : list) // look for button in group light gray button
-        				if (element.getAttribute("ng-click")!=null && element.isDisplayed())
-        				if (element.getAttribute("ng-click").contains(cssData)) {
-        					button = element;
-        					break;
-        				}
-        		}
-        
-        		if (button == null){
-        			String cssDataLC = cssData.toLowerCase();
-        			list = GeneralMethods.FindElementsInObjHierarchy(obj, this.listButtonsClassBtnCss);
-        			if (list != null){
-        				for (WebElement element : list) // look for button in group class ^= btn
-        					if (element.getAttribute("value")!=null && element.isDisplayed())
-        						if (element.getAttribute("value").toLowerCase().equals(cssDataLC)) {
-        							button = element;
-        							break;
-        					}
-        			}
-        		}
-        		
-        		/*if (button == null){
-        			list = GeneralMethods.FindElementsInObjHierarchy(obj, this.listButtonsSpanCss);
-        			if (list != null){
-        				for (WebElement element : list) // look for button of tag span
-        					if (element.getAttribute("ng-click")!=null && element.isDisplayed())
-        						if (element.getAttribute("ng-click").contains(cssData)) {
-        							button = element;
-        							break;
-        						}
-        			}
-        		}*/
-        		
-        		/*if (button == null){
-            		list = GeneralMethods.FindElementsInObjHierarchy(obj, this.listButtonsClassAddCss);
-            		if (list != null){
-            			for (WebElement element : list) // look for button of tag span
-            				if (element.getAttribute("ng-click")!=null && element.isDisplayed())
-            					if (element.getAttribute("ng-click").contains(cssData)) {
-        							button = element;
-        							break;
-        						}
-            		}
-        		}*/
-        		
-        	/*	driver.manage().timeouts().implicitlyWait(PardotTestCase.timeOut, TimeUnit.SECONDS);
-        		if (button == null) System.out.println("GenericPage.findVisibleButton: could not find button "+buttonDescription);		
-        		return button;
-        	} catch (Exception e){
-        		System.out.println("GenericPage.findVisibleButton: Exception thrown when attempting to find button "+buttonDescription+" "+e.getMessage());
-                return null;
-        	}
-        }*/
-
-
+     
 		public boolean clickButton(List<WebElement> modalFooterButtons) {
 			// TODO Auto-generated method stub
 			return false;

@@ -32,8 +32,7 @@ public static WebDriver startDriver (){
 	
 	//  set path to ChromeDriver executable
 	String chromeDriverExe = "";
-	//if (PardotTestCase.platform.toLowerCase().contains("windows")) chromeDriverExe = PardotTestCase.workingDir+"\\configuration\\chromedriver.exe";
-	//else chromeDriverExe = PardotTestCase.workingDir+"\\configuration\\chromedriver";
+	
 	if (PardotTestCase.platform.toLowerCase().indexOf("windows")>=0) chromeDriverExe = PardotTestCase.workingDir+"\\configuration\\chromedriver.exe";
 	else chromeDriverExe = PardotTestCase.workingDir+"//configuration//chromedriver";
 	System.setProperty("webdriver.chrome.driver", "/Users/Sujata/chromedriver.exe"); 
@@ -531,19 +530,7 @@ public static void delay (int delayLength) {
 		
 	}
 	
-	/*public static boolean PatternLibComplianceCheckWithTag(WebElement obj, String field, String value, String tagValue, String label){
-		System.out.println("Perform a Pattern Library compliance check for object " + label);
-		try{
-			String tag = obj.getTagName();
-			String attr = obj.getAttribute(field);
-			if (attr.contains(value) && tag.equals(tagValue)) return true;
-			return false;
-		} catch (Exception e){
-			System.out.println ("Exception thrown on PatternLibComplianceCheck " +e.getMessage());
-			return false;
-		}
-	}*/
-	
+		
 	public static WebElement FindvisibleObject(List<WebElement> objs){
 		System.out.println("Find the displayed object from a list");
 		try{
@@ -586,7 +573,7 @@ public static void delay (int delayLength) {
 			return null;
 		}
 	}
-	////
+
 	
 	// General form methods
 	public static Boolean ClickFormTab (WebDriver driver, WebElement form, String tabName){
