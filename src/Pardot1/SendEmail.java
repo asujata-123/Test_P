@@ -66,7 +66,9 @@ import org.openqa.selenium.*;
 		driver.manage().timeouts().implicitlyWait(160, TimeUnit.SECONDS);		
 		driver.findElement(By.cssSelector("#template_confirm")).click();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		  		   
+		driver.findElement(By.id("save_information")).click();	
+		
+		
 			 System.out.println("Wait 3s after login");
 	          GeneralMethods.delay(3000);
 	          // Calculate the test step elapsed time

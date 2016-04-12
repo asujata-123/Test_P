@@ -77,10 +77,9 @@ public class CreateList extends PardotTestCase {
 						driver.findElement(By.id("save_information")).click(); 
 						driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 						
-						System.out.printf("New list is created with name", listName);
-															
-				        System.out.println("Wait 3s after login");
-				          GeneralMethods.delay(3000);
+						System.out.println("New list is created with name ListOriginal");
+											
+				      
 				          // Calculate the test step elapsed time
 				  		 // long elapsedTimeA = Calendar.getInstance().getTimeInMillis() - elapsedTimeB;
 				  		         return;
