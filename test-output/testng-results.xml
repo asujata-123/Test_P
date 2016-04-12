@@ -1,61 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="8" passed="8">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="PardotTestNG" duration-ms="156351" started-at="2016-04-12T08:13:47Z" finished-at="2016-04-12T08:16:24Z">
+  <suite name="Default suite" duration-ms="65528" started-at="2016-04-12T09:49:29Z" finished-at="2016-04-12T09:50:35Z">
     <groups>
     </groups>
-    <test name="Pardot1" duration-ms="156351" started-at="2016-04-12T08:13:47Z" finished-at="2016-04-12T08:16:24Z">
+    <test name="Default test" duration-ms="65528" started-at="2016-04-12T09:49:29Z" finished-at="2016-04-12T09:50:35Z">
       <class name="Pardot1.CreateList">
-        <test-method status="PASS" signature="ListOriginal()[pri:1, instance:null(Pardot1.CreateList)]" name="ListOriginal" duration-ms="33441" started-at="2016-04-12T04:13:47Z" finished-at="2016-04-12T04:14:21Z">
+        <test-method status="PASS" signature="ListOriginal()[pri:1, instance:null(Pardot1.CreateList)]" name="ListOriginal" duration-ms="34673" started-at="2016-04-12T05:49:29Z" finished-at="2016-04-12T05:50:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ListOriginal -->
-        <test-method status="PASS" signature="DupeList()[pri:0, instance:null(Pardot1.CreateList)]" name="DupeList" duration-ms="8162" started-at="2016-04-12T04:14:21Z" depends-on-methods="Pardot1.CreateList.ListOriginal" finished-at="2016-04-12T04:14:29Z">
+        <test-method status="PASS" signature="DupeList()[pri:0, instance:null(Pardot1.CreateList)]" name="DupeList" duration-ms="9191" started-at="2016-04-12T05:50:04Z" depends-on-methods="Pardot1.CreateList.ListOriginal" finished-at="2016-04-12T05:50:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- DupeList -->
-        <test-method status="PASS" signature="RenameList()[pri:0, instance:null(Pardot1.CreateList)]" name="RenameList" duration-ms="10753" started-at="2016-04-12T04:14:29Z" depends-on-methods="Pardot1.CreateList.DupeList" finished-at="2016-04-12T04:14:40Z">
+        <test-method status="PASS" signature="RenameList()[pri:0, instance:null(Pardot1.CreateList)]" name="RenameList" duration-ms="10770" started-at="2016-04-12T05:50:13Z" depends-on-methods="Pardot1.CreateList.DupeList" finished-at="2016-04-12T05:50:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RenameList -->
-        <test-method status="PASS" signature="OriginalNameListCreation()[pri:0, instance:null(Pardot1.CreateList)]" name="OriginalNameListCreation" duration-ms="9527" started-at="2016-04-12T04:14:40Z" depends-on-methods="Pardot1.CreateList.RenameList" finished-at="2016-04-12T04:14:49Z">
+        <test-method status="PASS" signature="OriginalNameListCreation()[pri:0, instance:null(Pardot1.CreateList)]" name="OriginalNameListCreation" duration-ms="9446" started-at="2016-04-12T05:50:24Z" depends-on-methods="Pardot1.CreateList.RenameList" finished-at="2016-04-12T05:50:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OriginalNameListCreation -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:null(Pardot1.CreateList)]" name="tearDown" is-config="true" duration-ms="1354" started-at="2016-04-12T04:14:49Z" finished-at="2016-04-12T04:14:51Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:null(Pardot1.CreateList)]" name="tearDown" is-config="true" duration-ms="1415" started-at="2016-04-12T05:50:33Z" finished-at="2016-04-12T05:50:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- Pardot1.CreateList -->
-      <class name="Pardot1.SendEmail">
-        <test-method status="PASS" signature="SendEmail()[pri:0, instance:null(Pardot1.SendEmail)]" name="SendEmail" duration-ms="41230" started-at="2016-04-12T04:15:41Z" finished-at="2016-04-12T04:16:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SendEmail -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:null(Pardot1.SendEmail)]" name="tearDown" is-config="true" duration-ms="1296" started-at="2016-04-12T04:16:22Z" finished-at="2016-04-12T04:16:24Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Pardot1.SendEmail -->
-      <class name="Pardot1.CreateProspect">
-        <test-method status="PASS" signature="CreateProspect1()[pri:1, instance:null(Pardot1.CreateProspect)]" name="CreateProspect1" duration-ms="31681" started-at="2016-04-12T04:14:51Z" finished-at="2016-04-12T04:15:22Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateProspect1 -->
-        <test-method status="PASS" signature="CreateProspectList()[pri:0, instance:null(Pardot1.CreateProspect)]" name="CreateProspectList" duration-ms="9524" started-at="2016-04-12T04:15:22Z" depends-on-methods="Pardot1.CreateProspect.CreateProspect1" finished-at="2016-04-12T04:15:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CreateProspectList -->
-        <test-method status="PASS" signature="EnsureProspect()[pri:0, instance:null(Pardot1.CreateProspect)]" name="EnsureProspect" duration-ms="8153" started-at="2016-04-12T04:15:32Z" depends-on-methods="Pardot1.CreateProspect.CreateProspect1" finished-at="2016-04-12T04:15:40Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EnsureProspect -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:null(Pardot1.CreateProspect)]" name="tearDown" is-config="true" duration-ms="1194" started-at="2016-04-12T04:15:40Z" finished-at="2016-04-12T04:15:41Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- Pardot1.CreateProspect -->
-    </test> <!-- Pardot1 -->
-  </suite> <!-- PardotTestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

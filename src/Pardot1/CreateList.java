@@ -76,6 +76,8 @@ public class CreateList extends PardotTestCase {
 						driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 						driver.findElement(By.id("save_information")).click(); 
 						driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+						
+						System.out.printf("New list is created with name", listName);
 															
 				        System.out.println("Wait 3s after login");
 				          GeneralMethods.delay(3000);
