@@ -160,7 +160,7 @@ public class CreateProspect extends PardotTestCase {
 	    }
 	  }
 
-	@Test(dependsOnMethods={"CreateProspect1"})
+	@Test(dependsOnMethods={"CreateProspectList"})
 	//Prospect attached to the list
 	public void EnsureProspect() throws IOException, InterruptedException{
 	    try{
