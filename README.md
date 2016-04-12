@@ -7,5 +7,7 @@ Select TestNG_testng.xml run configuration and run.
 or right click on the class file and then run as run configuration. 
 Tests in each class file can be run as individual tests.
 Out of scope: As sending email is disabled, Text only email is saved.
+Expect short delay set before setting the login and password
+Each class file will open new broswer and run the test in that class file and close the browser.
 
 
