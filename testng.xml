@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="PardotTestNG" verbose="1" >
+<suite name="TestNG" verbose="1" >
   <test name="Pardot1" >
     <classes>
       <class name="Pardot1.CreateList"/>

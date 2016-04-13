@@ -17,7 +17,8 @@ import org.openqa.selenium.*;
 		 
 		 public boolean acceptNextAlert = true;
 		 public StringBuffer verificationErrors = new StringBuffer();
-		  @Test
+		  //@Test
+		 @Test(priority=8)
 		public static void SendEmail() throws Exception {
 			PardotTestCase.testName = "CreateProspect";	
 			PardotTestCase.tester = "Sujata Sudhakar";

@@ -29,7 +29,7 @@ public class CreateProspect extends PardotTestCase {
 	public static String _previousListName;
 	public static String _listName;
 	
-	@Test(priority=1)
+	@Test(priority=5)
 	
 	public static void CreateProspect1() throws Exception {
 		PardotTestCase.testName = "CreateProspect";	

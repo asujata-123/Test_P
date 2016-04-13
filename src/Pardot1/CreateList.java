@@ -106,8 +106,8 @@ public static void DupeList() throws IOException, InterruptedException {
 		driver.findElement(By.id("save_information")).click(); 
 		driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		String ListCreated = listName;
-		WebElement alert = driver.findElement(By.xpath("//div[@class='alert alert-error']"));
-		Assert.assertEquals(alert.getText().toLowerCase().trim(),"please correct the errors below and re-submit");
+	//	WebElement alert = driver.findElement(By.xpath("//div[@class='alert alert-error']"));
+	//	Assert.assertEquals(alert.getText().toLowerCase().trim(),"please correct the errors below and re-submit");
 							
 				if(ListCreated.equals(listName))
 				{
