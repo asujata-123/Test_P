@@ -154,10 +154,16 @@ public class CreateProspect extends PardotTestCase {
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			driver.findElement(By.name("commit")).click();   	 
 	    	
-	      return;
-	    } catch (NoAlertPresentException e) {
-	      return;
-	    }
+			  System.out.println("Wait 3s after login");
+	          GeneralMethods.delay(3000);
+	          // Calculate the test step elapsed time
+	  		 // long elapsedTimeA = Calendar.getInstance().getTimeInMillis() - elapsedTimeB;
+	  		         return;
+} catch (Exception e){
+System.out.println("List: Exception thrown " + e.getMessage());
+return;
+}
+	        
 	  }
 
 	@Test(dependsOnMethods={"CreateProspectList"})

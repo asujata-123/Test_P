@@ -34,7 +34,7 @@ public class CreateList extends PardotTestCase {
 	@Test(priority=1)
 	public static void ListOriginal() throws IOException, InterruptedException {
 		try{
-		PardotTestCase.testName = "CreateList_Copy";	
+		PardotTestCase.testName = "CreateList";	
 		PardotTestCase.tester = "Sujata Sudhakar";
 		
 	WebDriver driver = GeneralMethods.startDriver();	
@@ -79,7 +79,8 @@ public class CreateList extends PardotTestCase {
 						
 						System.out.println("New list is created with name ListOriginal");
 											
-				      
+						System.out.println("Wait 3s after login");
+				          GeneralMethods.delay(3000);
 				          // Calculate the test step elapsed time
 				  		 // long elapsedTimeA = Calendar.getInstance().getTimeInMillis() - elapsedTimeB;
 				  		         return;
@@ -124,7 +125,7 @@ public static void DupeList() throws IOException, InterruptedException {
 
 @Test(dependsOnMethods={"DupeList"})
 
-public void RenameList() throws IOException, InterruptedException{
+public static void RenameList() throws IOException, InterruptedException{
     try{
      ListModulePage lmp = new ListModulePage(driver, "listmodulepage");
     	
@@ -158,7 +159,7 @@ public void RenameList() throws IOException, InterruptedException{
 }
 @Test(dependsOnMethods={"RenameList"})
 //OrginalNameListCreation
-public void OriginalNameListCreation() throws IOException, InterruptedException{
+public static void OriginalNameListCreation() throws IOException, InterruptedException{
     try{
     	ListModulePage lmp = new ListModulePage(driver, "listmodulepage");
 	 lmp.Marketing.click();

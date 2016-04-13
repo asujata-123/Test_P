@@ -63,7 +63,7 @@ public  class ListModulePage extends GenericPage {
     @FindBy(how = How.CSS, using = "div[class='container-1200'] li[a href='/list']")
     public WebElement MSLists;
     
-   // public WebElement alert = driver.findElement(By.xpath("//div[@class='alert alert-info']"));
+   
     //Methods
     public void setName(String ListName) throws IOException, InterruptedException {
 	      super.setTextField(Name, "name", ListName);   
